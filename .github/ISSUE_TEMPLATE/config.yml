@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "README du projet"
+    url: "https://github.com/benoit-bremaud/tp15-diagnostic-plan-reprise#readme"
+    about: "Consultez le README pour comprendre la structure et les phases du TP"
