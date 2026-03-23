@@ -1,0 +1,52 @@
+name: "Configuration / Setup"
+description: "Tâche de configuration ou mise en place de l'environnement de travail"
+labels: ["type:setup"]
+assignees:
+  - benoit-bremaud
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Nouvelle tâche de configuration
+        Remplissez les champs ci-dessous pour décrire la tâche de setup.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Décrivez la tâche de configuration à réaliser"
+      placeholder: "En tant qu'étudiant, je souhaite..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Listez les critères qui valident la complétion de cette tâche"
+      placeholder: |
+        - [ ] Critère 1
+        - [ ] Critère 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priorité"
+      options:
+        - "P0 — Haute (bloquant)"
+        - "P1 — Moyenne"
+        - "P2 — Basse"
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes complémentaires"
+      description: "Informations supplémentaires, liens, contexte"
+      placeholder: "Optionnel"
+    validations:
+      required: false
