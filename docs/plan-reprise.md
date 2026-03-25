@@ -91,15 +91,14 @@ quadrantChart
 
 - Passer d'une structure par couche technique à une structure par **domaine fonctionnel** :
 
-```text
-wallride-core/
-├── article/        (entity, repository, service, controller)
-├── page/           (entity, repository, service, controller)
-├── user/           (entity, repository, service, controller)
-├── blog/           (entity, repository, service, controller)
-├── comment/        (entity, repository, service, controller)
-└── shared/         (configuration, utilitaires transversaux)
-```
+| Module | Contenu |
+| --- | --- |
+| `wallride-core/article/` | entity, repository, service, controller |
+| `wallride-core/page/` | entity, repository, service, controller |
+| `wallride-core/user/` | entity, repository, service, controller |
+| `wallride-core/blog/` | entity, repository, service, controller |
+| `wallride-core/comment/` | entity, repository, service, controller |
+| `wallride-core/shared/` | configuration, utilitaires transversaux |
 
 **Qualité de code :**
 

@@ -9,8 +9,10 @@ Thumbs.db
 *.swo
 
 # Generated
-*.pdf
 *.zip
+
+# PDFs — deliverables are tracked
+!docs/*.pdf
 
 # Node (if any tooling is used)
 node_modules/
