@@ -1,0 +1,62 @@
+name: "Livrable"
+description: "Rédaction d'un livrable final (rapport, plan, document)"
+labels: ["type:deliverable"]
+assignees:
+  - benoit-bremaud
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Nouveau livrable
+        Remplissez les champs ci-dessous pour décrire le livrable à produire.
+
+  - type: dropdown
+    id: livrable-type
+    attributes:
+      label: "Type de livrable"
+      options:
+        - "Rapport d'audit (docs/rapport-audit.md)"
+        - "Plan de reprise (docs/plan-reprise.md)"
+        - "Autre document"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Décrivez le livrable attendu"
+      placeholder: "Rédiger..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: structure
+    attributes:
+      label: "Structure attendue"
+      description: "Décrivez les sections et le plan du document"
+      placeholder: |
+        1. Introduction
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dépendances"
+      description: "Issues qui doivent être complétées avant ce livrable"
+      placeholder: "Nécessite #6, #7, #8..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Listez les critères qui valident la complétion du livrable"
+      placeholder: |
+        - [ ] Critère 1
+        - [ ] Critère 2
+    validations:
+      required: true

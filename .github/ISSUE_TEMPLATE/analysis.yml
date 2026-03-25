@@ -1,0 +1,71 @@
+name: "Analyse technique"
+description: "Tâche d'analyse technique (SonarCloud, dette, architecture)"
+labels: ["type:analysis"]
+assignees:
+  - benoit-bremaud
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Nouvelle tâche d'analyse
+        Remplissez les champs ci-dessous pour décrire l'analyse à réaliser.
+
+  - type: dropdown
+    id: partie
+    attributes:
+      label: "Partie du TP concernée"
+      options:
+        - "Partie 1 — Analyse SonarCloud"
+        - "Partie 2 — Dette technique et dépendances"
+        - "Partie 3 — Érosion architecturale"
+        - "Partie 4 — Plan de reprise"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Décrivez l'analyse à réaliser"
+      placeholder: "Analyser..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: "Questions à traiter"
+      description: "Listez les questions auxquelles cette analyse doit répondre"
+      placeholder: |
+        - [ ] Question 1
+        - [ ] Question 2
+    validations:
+      required: true
+
+  - type: input
+    id: livrable
+    attributes:
+      label: "Fichier livrable"
+      description: "Quel fichier d'analyse sera complété ?"
+      placeholder: "analysis/partie-X-xxx.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Listez les critères qui valident la complétion de cette analyse"
+      placeholder: |
+        - [ ] Critère 1
+        - [ ] Critère 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes complémentaires"
+      description: "Informations supplémentaires, liens, contexte"
+    validations:
+      required: false

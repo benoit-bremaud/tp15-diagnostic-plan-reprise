@@ -16,11 +16,21 @@ Closes #
 - [ ] Phase 5 — Plan de reprise
 - [ ] Phase 6 — Rédaction des livrables finaux
 
-## Vérifications
+## Checklist
+- [ ] Les commits suivent la convention Angular (`<type>(<scope>): <description>`)
+- [ ] La branche est à jour avec `main`
 - [ ] Relecture fonctionnelle effectuée
 - [ ] Impact documentation vérifié
 - [ ] Captures d'écran à jour (si applicable)
 - [ ] Aucun conflit avec `main`
+
+## Métadonnées
+<!-- Vérifier avant de soumettre -->
+- [ ] **Assignee** : `benoit-bremaud`
+- [ ] **Labels** : type + priorité + `claude-code-assisted` (si applicable) + partie (si applicable)
+- [ ] **Project** : `TP15 — Diagnostic et Plan de Reprise`
+- [ ] **Milestone** : correspondant à la phase (Setup / Analyses / Livrables)
+- [ ] **Reviewer** : `copilot-pull-request-reviewer`
 
 ## Notes de revue
 <!-- Points d'attention pour le reviewer -->
