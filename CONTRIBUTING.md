@@ -168,10 +168,20 @@ Closes #XX
 ## Changements réalisés
 - ...
 
-## Vérifications
+## Phase concernée
+- [ ] Phase 1 — Setup du projet
+- [ ] Phase 2 — Analyse SonarCloud
+- [ ] Phase 3 — Analyse des dépendances
+- [ ] Phase 4 — Érosion architecturale
+- [ ] Phase 5 — Plan de reprise
+- [ ] Phase 6 — Rédaction des livrables finaux
+
+## Checklist
+- [ ] Les commits suivent la convention Angular
+- [ ] La branche est à jour avec `main`
 - [ ] Relecture fonctionnelle effectuée
 - [ ] Impact documentation vérifié
-- [ ] Aucun conflit avec main
+- [ ] Aucun conflit avec `main`
 EOF
 )"
 

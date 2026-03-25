@@ -27,7 +27,7 @@ Closes #
 ## Métadonnées
 <!-- Vérifier avant de soumettre -->
 - [ ] **Assignee** : `benoit-bremaud`
-- [ ] **Labels** : type + partie + priorité + `claude-code-assisted` (si applicable)
+- [ ] **Labels** : type + priorité + `claude-code-assisted` (si applicable) + partie (si applicable)
 - [ ] **Project** : `TP15 — Diagnostic et Plan de Reprise`
 - [ ] **Milestone** : correspondant à la phase (Setup / Analyses / Livrables)
 - [ ] **Reviewer** : `copilot-pull-request-reviewer`
