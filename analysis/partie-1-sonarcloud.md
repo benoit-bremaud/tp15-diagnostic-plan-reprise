@@ -115,14 +115,29 @@ Indépendamment de SonarCloud, l'analyse manuelle du code révèle des failles d
 
 ## 1.3 Captures d'écran
 
-<!-- Insérer les captures depuis le dossier screenshots/ -->
+### Dashboard — Quality Gate & Métriques globales (Overall Code)
 
-> **TODO** : Ajouter les captures d'écran SonarCloud dans le dossier `screenshots/` :
-> - `screenshots/sonarcloud-dashboard.png` — Vue d'ensemble du projet
-> - `screenshots/sonarcloud-bugs.png` — Liste des bugs
-> - `screenshots/sonarcloud-vulnerabilities.png` — Vulnérabilités détectées
-> - `screenshots/sonarcloud-code-smells.png` — Code smells principaux
-> - `screenshots/sonarcloud-debt.png` — Répartition de la dette technique
+![SonarQube Dashboard — Overall Code](../screenshots/sonarqube-dashboard-overall.png)
+
+> Quality Gate : **Passed**. Métriques visibles : 15 bugs (C), 0 vulnérabilités (A), 14 Security Hotspots (E), 7d1h de dette, 428 code smells (A), 0% couverture, 16.4% duplication.
+
+### Dashboard — New Code
+
+![SonarQube Dashboard — New Code](../screenshots/sonarqube-dashboard-new-code.png)
+
+> Aucune donnée sur le "New Code" — normal car c'est la première analyse.
+
+### Issues — Bugs et Code Smells
+
+![SonarQube Issues](../screenshots/sonarqube-issues.png)
+
+> 443 issues au total (7j 3h d'effort). On observe les patterns récurrents : méthodes vides (`suspicious`), code commenté (`unused`), complexité cognitive excessive (`brain-overload`), conventions de nommage (`convention`).
+
+### Security Hotspots — CSRF
+
+![SonarQube Security Hotspots](../screenshots/sonarqube-security-hotspots.png)
+
+> 14 Security Hotspots, tous de priorité **HIGH**, liés au **CSRF** (règle `java:S3752`). Les contrôleurs admin acceptent des méthodes HTTP safe et unsafe sans protection CSRF. Fichiers impactés : `ArticleDescribeController`, `PageDescribeController`, `CategorySelectController`, `CommentSearchController`, etc.
 
 ## 1.4 Interprétation
 

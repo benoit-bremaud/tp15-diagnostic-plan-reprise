@@ -49,10 +49,11 @@ L'audit couvre l'intégralité du dépôt [tagbangers/wallride](https://github.c
 
 ### 2.1 Configuration
 
-Le fork `benoit-bremaud/wallride` a été importé dans SonarCloud pour analyse automatique.
+Le fork `benoit-bremaud/wallride` a été analysé avec **SonarQube 9.9.8 LTS** (Community Edition, Docker local). Le projet a été créé manuellement dans SonarQube, puis analysé via `sonar-scanner` sur les 340 fichiers source Java.
 
-<!-- TODO: Ajouter captures d'écran SonarCloud -->
-> Les captures d'écran SonarCloud sont disponibles dans le dossier `screenshots/`.
+### 2.2 Dashboard
+
+![SonarQube Dashboard — Overall Code](../screenshots/sonarqube-dashboard-overall.png)
 
 ### 2.2 Métriques Clés
 
