@@ -149,10 +149,10 @@ Le repo dispose d'un template automatique (`.github/pull_request_template.md`). 
 | Métadonnée | Valeur |
 |---|---|
 | **Assignees** | `benoit-bremaud` |
-| **Labels** | Mêmes labels que l'issue liée + `claude-code-assisted` si applicable |
+| **Labels** | Mêmes labels que l'issue liée |
 | **Project** | `TP15 — Diagnostic et Plan de Reprise` |
 | **Milestone** | Même milestone que l'issue liée |
-| **Reviewers** | `benoit-bremaud` + `copilot-pull-request-reviewer` |
+| **Reviewers** | `benoit-bremaud` |
 
 ### Commande CLI (référence)
 
@@ -190,16 +190,13 @@ gh api repos/benoit-bremaud/tp15-diagnostic-plan-reprise/issues/PR_NUMBER/assign
   -X POST --input - <<< '{"assignees": ["benoit-bremaud"]}'
 
 gh api repos/benoit-bremaud/tp15-diagnostic-plan-reprise/issues/PR_NUMBER/labels \
-  -X POST --input - <<< '{"labels": ["type:setup", "claude-code-assisted"]}'
+  -X POST --input - <<< '{"labels": ["type:setup"]}'
 
 # Lier au projet TP15
 PR_ID=$(gh api repos/benoit-bremaud/tp15-diagnostic-plan-reprise/pulls/PR_NUMBER --jq '.node_id')
 gh api graphql -f query='mutation($p:ID!,$c:ID!){addProjectV2ItemById(input:{projectId:$p,contentId:$c}){item{id}}}' \
   -f p="PVT_kwHOB8rwIc4BSiW3" -f c="$PR_ID"
 
-# Demander review Copilot (best-effort)
-gh api repos/benoit-bremaud/tp15-diagnostic-plan-reprise/pulls/PR_NUMBER/requested_reviewers \
-  -X POST --input - <<< '{"reviewers": ["copilot-pull-request-reviewer"]}'
 ```
 
 ## Labels
@@ -229,12 +226,6 @@ gh api repos/benoit-bremaud/tp15-diagnostic-plan-reprise/pulls/PR_NUMBER/request
 | `priority:medium` | Priorité moyenne (P1) |
 | `priority:low` | Priorité basse (P2) |
 
-### Spécial
-
-| Label | Description |
-|---|---|
-| `claude-code-assisted` | Issue créée ou traitée avec Claude Code |
-
 ## Milestones
 
 | Milestone | Description | Échéance |
@@ -248,7 +239,6 @@ gh api repos/benoit-bremaud/tp15-diagnostic-plan-reprise/pulls/PR_NUMBER/request
 | Reviewer | Rôle |
 |---|---|
 | `benoit-bremaud` | Self-review obligatoire |
-| `copilot-pull-request-reviewer` | Review automatisée (best-effort) |
 
 ---
 
