@@ -17,3 +17,6 @@ node_modules/
 
 # Environment
 .env
+
+# Wallride fork (cloned locally for SonarQube analysis)
+wallride-fork/

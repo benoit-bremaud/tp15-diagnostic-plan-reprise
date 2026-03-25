@@ -31,26 +31,36 @@ L'analyse démarre automatiquement après l'importation du projet. SonarCloud an
 
 ### Bugs
 
-<!-- TODO: Remplir avec les données SonarCloud réelles -->
-
 | Métrique | Valeur |
 |---|---|
-| Nombre total de bugs | _À compléter_ |
-| Bugs critiques (Critical) | _À compléter_ |
-| Bugs majeurs (Major) | _À compléter_ |
-| Bugs mineurs (Minor) | _À compléter_ |
+| Nombre total de bugs | **15** |
+| Bugs critiques (Critical) | 0 |
+| Bugs majeurs (Major) | **14** |
+| Bugs mineurs (Minor) | 1 |
+| **Rating Reliability** | **C** |
 
 **Fichiers les plus impactés** :
 
-_À compléter avec les captures SonarCloud_
+| Fichier | Bugs |
+|---|---|
+| `web/controller/admin/article/ArticleEditController.java` | 3 |
+| `web/controller/admin/page/PageEditController.java` | 3 |
+| `web/support/Posts.java` | 2 |
+| `web/controller/admin/customfield/CustomFieldEditController.java` | 1 |
+| `web/controller/admin/article/ArticleCreateController.java` | 1 |
+| `service/PostService.java` | 1 |
+| `support/ProxySecureChannelProcessor.java` | 1 |
+
+> Les bugs sont concentrés dans les **contrôleurs admin** (8/15) et la couche **web support** (3/15). Les services métier sont relativement épargnés (1/15).
 
 ### Vulnérabilités
 
 | Métrique | Valeur |
 |---|---|
-| Nombre total de vulnérabilités | _À compléter_ |
-| Vulnérabilités critiques | _À compléter_ |
-| Security Hotspots | _À compléter_ |
+| Nombre total de vulnérabilités | **0** |
+| Security Hotspots | **14** (0% reviewed) |
+| **Rating Security** | **A** |
+| **Rating Security Review** | **E** |
 
 **Vulnérabilités identifiées par analyse du code source** :
 
@@ -65,9 +75,13 @@ Indépendamment de SonarCloud, l'analyse manuelle du code révèle des failles d
 
 | Métrique | Valeur |
 |---|---|
-| Nombre total de code smells | _À compléter_ |
-| Dette technique (en jours) | _À compléter_ |
-| Ratio de dette technique | _À compléter_ |
+| Nombre total de code smells | **428** |
+| Critiques (Critical) | **99** |
+| Majeurs (Major) | **189** |
+| Mineurs (Minor) | **139** |
+| Info | 1 |
+| Dette technique | **7 jours 1 heure** |
+| **Rating Maintainability** | **A** |
 
 **Principaux problèmes relevés** (observés dans le code source) :
 
@@ -81,20 +95,23 @@ Indépendamment de SonarCloud, l'analyse manuelle du code révèle des failles d
 
 | Métrique | Valeur |
 |---|---|
-| Couverture globale | **~0%** (quasi nulle) |
-| Fichiers de test | 2 (sur 335 fichiers source) |
+| Couverture globale | **0.0%** |
+| Lignes à couvrir | **9 000** |
+| Unit Tests | **aucun exécuté** |
+| Fichiers de test | 2 (sur 340 fichiers source) |
 | Classes de test | `BootstrapTests.java`, `BlogTests.java` |
 
-> La couverture de tests est catastrophique : seulement 2 classes de test pour un projet de 335 fichiers Java. Cela rend toute refactorisation extrêmement risquée.
+> La couverture de tests est catastrophique : 0% sur 9 000 lignes à couvrir. Cela rend toute refactorisation extrêmement risquée.
 
 ### Duplication
 
 | Métrique | Valeur |
 |---|---|
-| Taux de duplication | _À compléter via SonarCloud_ |
-| Blocs dupliqués | _À compléter_ |
+| Taux de duplication | **16.4%** |
+| Blocs dupliqués | **325** |
+| Lignes analysées | **22 000** |
 
-**Observation** : la structure des contrôleurs admin (117 fichiers) et des services suggère un taux de duplication élevé, notamment entre les opérations CRUD d'Articles, Pages et Posts.
+> Le taux de duplication de 16.4% est très élevé (seuil recommandé : < 5%). Cela confirme la duplication entre les contrôleurs admin d'Articles, Pages et Posts (opérations CRUD similaires).
 
 ## 1.3 Captures d'écran
 
@@ -117,13 +134,15 @@ Indépendamment de SonarCloud, l'analyse manuelle du code révèle des failles d
 4. **Dette technique concentrée** — les services métier (Article, Page, User) accumulent la majorité de la complexité
 5. **Bus factor critique** — 74% des commits par un seul développeur (ogawa-takeshi)
 
-### Rating attendu
+### Ratings obtenus
 
-Compte tenu de l'analyse manuelle, on s'attend aux ratings SonarCloud suivants :
-
-| Dimension | Rating attendu | Justification |
+| Dimension | Rating | Détail |
 |---|---|---|
-| Reliability | **D ou E** | God classes, code mort, absence de tests |
-| Security | **E** | CSRF désactivé, failles non corrigées |
-| Maintainability | **D ou E** | Dette technique massive, couplage fort |
-| Coverage | **E** | ~0% de couverture |
+| Reliability | **C** | 15 bugs (14 majeurs), concentrés dans les contrôleurs admin |
+| Security | **A** | 0 vulnérabilité détectée par SonarQube |
+| Security Review | **E** | 14 hotspots, 0% revus |
+| Maintainability | **A** | 428 code smells, 7j1h de dette technique |
+| Coverage | **—** | 0.0% (aucun test exécuté) |
+| Duplication | **—** | 16.4% (325 blocs dupliqués) |
+
+> **Note importante** : le rating Security **A** est trompeur. SonarQube ne détecte pas les vulnérabilités liées à la configuration Spring Security (CSRF désactivé, headers désactivés, password encoder déprécié) car ce sont des choix de configuration, pas des patterns de code vulnérable. Les 14 Security Hotspots non revus et l'analyse manuelle révèlent des failles structurelles graves que les ratings automatiques ne capturent pas.

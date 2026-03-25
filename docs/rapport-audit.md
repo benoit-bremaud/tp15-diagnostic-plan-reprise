@@ -60,16 +60,19 @@ Le fork `benoit-bremaud/wallride` a été importé dans SonarCloud pour analyse 
 
 | Métrique | Valeur |
 | --- | --- |
-| Dette technique estimée | _À compléter via SonarCloud_ |
+| Dette technique estimée | **7 jours 1 heure** |
+| Code smells | **428** (99 critiques, 189 majeurs, 139 mineurs) |
+| Duplication | **16.4%** (325 blocs dupliqués sur 22k lignes) |
+| Couverture | **0.0%** (9 000 lignes à couvrir, aucun test exécuté) |
 | Fichiers les plus endettés | `ArticleService.java` (697 lignes), `PageService.java` (667 lignes) |
-| Parties difficiles à maintenir | Package `web/controller/admin/` (117 fichiers), services métier surdimensionnés |
 
 #### Bugs et Vulnérabilités
 
-| Métrique | Valeur |
-| --- | --- |
-| Bugs identifiés | _À compléter via SonarCloud_ |
-| Vulnérabilités | _À compléter via SonarCloud_ |
+| Métrique | Valeur | Rating |
+| --- | --- | --- |
+| Bugs | **15** (14 majeurs, 1 mineur) | **C** (Reliability) |
+| Vulnérabilités | **0** | **A** (Security) |
+| Security Hotspots | **14** (0% reviewed) | **E** (Security Review) |
 
 **Failles structurelles identifiées par analyse manuelle :**
 
